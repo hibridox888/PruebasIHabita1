@@ -1,0 +1,25 @@
+<h2>Ingrese datos para ingresar documento nuevo:</h2>
+<%= form_with(model: @doc) do |f| %>
+    <div class="field">
+        <%= f.label :empresa %><br />
+        <%= f.text_field :empresa, autofocus: true, autocomplete: "Suracon" %>
+    </div>
+    <div class="field">
+        <%= f.label :tipo %><br />
+        <%= f.text_field :tipo, autocomplete: "factura" %>
+    </div>
+    <div class="field">
+        <%= f.label :rut %><br />
+        <%= f.text_field :rut, autocomplete: "77.777.777-7" %>
+    </div>
+    <div class="field">
+        <%= f.label :numero %><br />
+        <%= f.text_field :numero, autocomplete: "99587" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Ingresar" %>
+    </div>
+<% end %>
+
+<%= button_to "Volver", user_session_path %>
+<%= button_to "Salir", destroy_user_session_path, method: :delete %>

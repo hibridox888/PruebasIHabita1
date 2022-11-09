@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .desktoplogo {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0px;
+    border: none;
+    background: #000;
+  }
+
+  .wsmenucontainer {
+    background-size: cover;
+    background-image: url(../images/bg01.jpg);
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktoplogo a img {
+    width: 200px;
+    height: auto;
+  }
+
+  .Mensaje{
+    text-align: center;
+    color:  #000;
+    background: #fff;
+    margin: none;
+    font-family: 'Montserrat', sans-serif;
+  }

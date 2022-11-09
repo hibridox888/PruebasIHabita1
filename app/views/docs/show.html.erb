@@ -1,0 +1,15 @@
+<h1> Documentos hasta la fecha </h1>
+
+<ul>
+    <% @docs.each do |doc| %>
+        <li>
+        <%= doc.id %> |
+        <%= doc.empresa %> |
+        <%= doc.tipo %> |
+        <%= doc.rut %> |
+        <%= doc.numero %>
+        </li>
+    <% end %>
+</ul>
+<%= button_to "Volver", user_session_path %>
+<%= button_to "Salir", destroy_user_session_path, method: :delete %>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProyectoInicial</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <div class= "wsmenucontainer">
+    <div class="desktoplogo">
+      <a href="localhost:3000">
+        <img src="https://www.ihabita.cl/imagenes/logo-habita.svg" alt="">
+      </a>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
+  </body>
+</html>

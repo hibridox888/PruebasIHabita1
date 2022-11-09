@@ -1,0 +1,18 @@
+<div class = "Mensaje">
+  <% if signed_in? %>
+    <h1> Bienvenido al sistema </h1>
+    <h2>estamos trabajando para usted</h2>
+    <%= link_to "Ver Documentos", docs_path %>
+    <%= link_to "Crear documentos", new_docs_path %>
+    <%= link_to "Marcar Documento", new_docs_path %>
+    <%= button_to "Salir", destroy_user_session_path, method: :delete %>
+  <% else %>
+    Bienvenido al sistema de Administracion de IHabita. <br>
+    Para Continuar Inicie Sesion.<br>
+    <div class= "Mensaje">
+      <%= link_to "Registrarse", new_user_registration_path %>
+      <br>
+      <%= link_to "Ingresar", new_user_session_path %>
+    </div>
+  <% end %>
+</div>
