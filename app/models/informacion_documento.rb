@@ -1,5 +1,5 @@
 class InformacionDocumento < ApplicationRecord
-  belongs_to :empresa_emisora
-  belongs_to :empresa_grupo
-  belongs_to :tipo
+  has_many :empresasEmi
+  has_many :empresasGrup
+  has_many :tipos
 end

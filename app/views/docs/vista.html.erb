@@ -1,0 +1,37 @@
+<h1> Documentos hasta la fecha </h1>
+
+<ul>
+    <% @info.each do |info| %>                        
+                <li>
+                NUMERO DE DOCUMENTO:
+                <%= info.numero_documento %> <br><br>
+                Fecha de Emision: 
+                <%= info.fecha_emision %> |
+                Fecha de Vencimiento:
+                <%= info.fecha_vencimiento %> <br><br>
+                <h4>VALORES:</h4><br>
+                Neto: 
+                <%= info.neto %> <br><br>
+                IVA: 
+                <%= info.iva %> <br><br>
+                Exento:
+                <%= info.exento %> <br><br> 
+                <h4>Total: <%= info.total %></h4>
+                <br>
+                <br>
+                Empresa Emisora:
+                <%= @empresasEmi[info.empresa_emisora_id].nombre %> <br><br>
+                Empresa Receptora:
+                <%= @empresasGrup[info.empresa_grupo_id].nombre %><br><br>
+                <%= @tipos[info.tipo_id].nombre %>
+                <br>
+                ---------------------------------------------
+                <br>
+                <br>
+                <br>
+                </li>
+    <% end %>
+</ul>
+
+<%= button_to "Volver", user_session_path %>
+<%= button_to "Salir", destroy_user_session_path, method: :delete %>

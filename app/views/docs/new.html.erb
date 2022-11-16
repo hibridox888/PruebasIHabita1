@@ -1,5 +1,5 @@
 <h2>Ingrese datos para ingresar documento nuevo:</h2>
-<%= form_with(model: @doc) do |f| %>
+<%= form_with model: @doc do |f| %>
     <div class="field">
         <%= f.label :empresa %><br />
         <%= f.text_field :empresa, autofocus: true, autocomplete: "Suracon" %>

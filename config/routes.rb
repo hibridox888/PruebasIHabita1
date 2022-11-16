@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'main#index'
   resource :docs
   post '/docs/new', to:'docs#create'
-  post '/', to: 'main#index'
+  get '/docs/vista', to: 'docs#vista'
+  get 'docs/vista2', to: 'docs#vista2'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

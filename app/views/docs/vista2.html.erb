@@ -1,0 +1,61 @@
+<%= form_tag docs_vista2_path, method: :get do %>
+    <br>
+    <div class="Mensaje">
+        Seleccione Rut de empresa Emisora a revisar:
+    <%= select_tag :empresaEmi, options_from_collection_for_select(@empresasEmi, "id", "rut", @empresaEmi&.id), prompt: "-Seleccione Opcion-", onchange: "this.form.submit()" %>
+    <br><br>
+    <% if @empresaEmi %>
+        Seleccione documento a revisar: <%= select_tag :info, options_from_collection_for_select(@infos.where("empresa_emisora_id = #{@empresaEmi.id}"), "id", "numero_documento", @info&.id), prompt: "-Seleccione Opcion-", onchange: "this.form.submit()" %>
+    <% end %>
+    <br>
+    <br>
+    </div>
+<% end %>
+<% if @info %>
+    <div class="Mensaje">
+        LOS DATOS DEL DOCUMENTO SELECCIONADO SON:
+    </div>
+    <br><br>
+    <div class="Mensaje">
+        Empresa Emisora:
+        <%= @empresasEmi[@info.empresa_emisora_id-1].nombre %> 
+    </div>
+    <div class="Mensaje">
+        NUMERO DE DOCUMENTO:
+        <%= "#{@info.numero_documento} "%>
+    </div>
+    <div class="Mensaje">
+        Tipo de Factura: 
+        <%= @tipos[@info.tipo_id-1].nombre %>
+    </div>
+    <div class="Mensaje">
+        Fecha de Emision: 
+        <%= "#{@info.fecha_emision} "%> |
+        Fecha de Vencimiento:
+        <%= "#{@info.fecha_vencimiento} "%>
+    </div>
+    <div class="Mensaje">
+        Empresa Receptora:
+        <%= @empresasGrup[@info.empresa_grupo_id-1].nombre %>
+    </div>
+    <br>
+    <div class="Mensaje">
+        <h4>VALORES:</h4>
+        Neto: 
+        <%= "#{@info.neto} "%>
+    </div>
+    <div class="Mensaje">
+        IVA: 
+        <%= "#{@info.iva}" %> 
+    </div>
+    <div class="Mensaje">
+        Exento:
+        <%= "#{@info.exento} "%> 
+    </div>
+    <div class="Mensaje">
+    <h4>Total: 
+    <%= "#{@info.total}" %></h4>
+    </div>
+<% end %>
+<%= button_to "Volver", user_session_path %>
+<%= button_to "Salir", destroy_user_session_path, method: :delete %>
