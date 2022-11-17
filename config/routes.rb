@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/docs/new', to:'docs#create'
   get '/docs/vista', to: 'docs#vista'
   get 'docs/vista2', to: 'docs#vista2'
+  post 'docs/vista2', to: 'docs#vista2'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

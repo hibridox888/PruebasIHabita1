@@ -34,9 +34,18 @@ class DocsController < ApplicationController
         @infos = InformacionDocumento.all
         @empresasGrup = EmpresaGrupo.all
         @tipos = Tipo.all
+        @info2 = InformacionDocumento.where(id: params[:id])
+        if params[:decision] == "true"
+            if params[:estado] == "visible"
+                @info2.update(estado: "editable")
+            else
+                @info2.update(estado: "visible")
+            end
+        else
+          render :vista2
+        end
+
     end
-
-
     private
     def doc_params
         params.require(:doc).permit(:empresa,:tipo,:rut,:numero)
