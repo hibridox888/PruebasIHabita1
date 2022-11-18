@@ -20,9 +20,9 @@
                 <br>
                 <br>
                 Empresa Emisora:
-                <%= @empresasEmi[info.empresa_emisora_id].nombre %> <br><br>
+                <%= @empresasEmi[info.empresa_emisora_id-1].nombre %> <br><br>
                 Empresa Receptora:
-                <%= @empresasGrup[info.empresa_grupo_id].nombre %><br><br>
+                <%= @empresasGrup[info.empresa_grupo_id-1].nombre %><br><br>
                 <%= @tipos[info.tipo_id].nombre %>
                 <br>
                 ---------------------------------------------

@@ -66,8 +66,8 @@
         <%= "#{@info.estado}" %></h4>
     </div>
     
-    <%= button_to 'Modificar', {:controller => "docs",
-                                :action => "vista2",
+    <%= button_to 'Modificar',  {:controller => "docs",
+                                :action => "cambioestado",
                                 :id => @info.id,
                                 :estado =>@info.estado,
                                 :decision => "true"}, method: 'post', class: "btn btn-sm btn-success" %>

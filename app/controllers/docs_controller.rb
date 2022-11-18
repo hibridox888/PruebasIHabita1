@@ -34,12 +34,17 @@ class DocsController < ApplicationController
         @infos = InformacionDocumento.all
         @empresasGrup = EmpresaGrupo.all
         @tipos = Tipo.all
+        
+    end
+    def cambioestado
         @info2 = InformacionDocumento.where(id: params[:id])
         if params[:decision] == "true"
             if params[:estado] == "visible"
                 @info2.update(estado: "editable")
+                redirect_to docs_cambioestado_path
             else
                 @info2.update(estado: "visible")
+                redirect_to docs_cambioestado_path
             end
         else
           render :vista2
