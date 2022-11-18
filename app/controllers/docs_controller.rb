@@ -22,12 +22,16 @@ class DocsController < ApplicationController
         end
 
     end
+
+
     def vista
         @tipos = Tipo.all
         @empresasEmi = EmpresaEmisora.all
         @empresasGrup = EmpresaGrupo.all
         @info = InformacionDocumento.all
     end
+
+    
 
     def vista2
         @empresasEmi = EmpresaEmisora.all
@@ -36,6 +40,8 @@ class DocsController < ApplicationController
         @tipos = Tipo.all
         
     end
+
+
     def cambioestado
         @info2 = InformacionDocumento.where(id: params[:id])
         if params[:decision] == "true"

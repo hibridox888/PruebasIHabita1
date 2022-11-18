@@ -16,6 +16,7 @@ Este documento contiene todas las ideas que se deben realizar para quedar plasma
 
 7) Investigar sobre seleccion de datos en tiempo real segun rango de numeros.
 
+8) Analizar como mejorar tema de rutas para el futuro.
 
 application up and running.
 
