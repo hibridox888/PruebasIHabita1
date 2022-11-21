@@ -1,19 +1,25 @@
+<!-El codigo generado en este apartado sirve para mostrar las distintas pantallas en la parte inicial de la pagina
+si se inicio sesion de fomra correcto este muestra la primera parte del codigo, si no la segunda parte.
+->
 <div class = "Mensaje">
-  <% if signed_in? %>
+  <% if signed_in? %><!- si se inicio sesion se generan los siguientes elementos ->
     <h1> Bienvenido al sistema </h1><br>
     <h2>Seleccione una opción</h2><br>
+
     <%= link_to "Ver Documentos", docs_path %><br><br>
     <%= link_to "Crear documentos", new_docs_path %><br><br>
     <%= link_to "Muestra de datos", docs_vista_path %><br><br>
     <%= link_to "Muestra de datos seleccionables", docs_vista2_path %><br><br>
-    <%= button_to "Salir", destroy_user_session_path, method: :delete %>
-  <% else %>
+    <!- enlaces a los distintos enlaces generados en la pagina ->
+
+    <%= button_to "Salir", destroy_user_session_path, method: :delete %> <!- codigo para salir de la sesión ->
+  <% else %><!- si no se inicio sesion se generan los siguientes elementos ->
     Bienvenido al sistema de Administracion de IHabita. <br>
     Para Continuar Inicie Sesion.<br>
     <div class= "Mensaje">
-      <%= link_to "Registrarse", new_user_registration_path %>
+      <%= link_to "Registrarse", new_user_registration_path %><!- enlace al sistema de registro->
       <br>
-      <%= link_to "Ingresar", new_user_session_path %>
+      <%= link_to "Ingresar", new_user_session_path %><!- enlace al sistema de ingreso ->
     </div>
   <% end %>
 </div>

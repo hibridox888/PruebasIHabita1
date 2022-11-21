@@ -1,17 +1,26 @@
-<%= form_tag docs_vista2_path, method: :get do %>
+<!-El codigo generado en este apartado sirve para visualizar informacion en la base de datos
+Se usa la tabla InformacionDocumento de la  base de datos definida aca como @info y con esto se genera una lista
+con los datos.
+->
+
+<%= form_tag docs_vista2_path, method: :get do %><!- crea un formulario que siempre que se realiza un cambio se ve en la misma vista, la vista 2 ->
     <br>
     <div class="Mensaje">
         Seleccione Rut de empresa Emisora a revisar:
     <%= select_tag :empresaEmi, options_from_collection_for_select(@empresasEmi, "id",->(dato) {"#{dato.rut}, #{dato.nombre}"}, @empresaEmi&.id), prompt: "-Seleccione Opcion-", onchange: "this.form.submit()" %>
+    <!- se crea un select que se guarda en empresaEmi, donde de una coleccion (conjunto de datos), llamada @empresasEmi, de la tabla EmpresaEmisora, se muestran tanto el dato rut como el nombre en orden de i y se espera respuesta de la Seleccione
+    una vez presionada la seleccion se guarda ->
     <br><br>
     <% if @empresaEmi %>
         Seleccione documento a revisar: <%= select_tag :info, options_from_collection_for_select(@infos.where("empresa_emisora_id = #{@empresaEmi.id}"), "id", "numero_documento", @info&.id), prompt: "-Seleccione Opcion-", onchange: "this.form.submit()" %>
+    <!- Se crea otro select que se guarda en info, de la coleccion de @infos que trae los datos de InformacionDocumento donde la ide de empresa_emisora es igual al dato guardado en empresaEmi, y se muestra el numero_documento
+    ordenado por id, y se espera seleccion de parte del usuario la cual se guarda ->
     <% end %>
     <br>
     <br>
     </div>
 <% end %>
-<% if @info %>
+<% if @info %><!- si existe guardada alguna informacion en la variable info se accede a la impresión de datos ->
     <div class="Mensaje">
         LOS DATOS DEL DOCUMENTO SELECCIONADO SON:
     </div>
@@ -71,7 +80,7 @@
                                 :id => @info.id,
                                 :estado =>@info.estado,
                                 :decision => "true"}, method: 'post', class: "btn btn-sm btn-success" %>
-    </div>
+    </div><!- se crea boton que al presionarlo envia datos para poder modificar la variable estado en la tabla InformacionDocumento realacionada con los datos previamente seleccionados. ->
 <% end %>
-<%= button_to "Volver", user_session_path %>
-<%= button_to "Salir", destroy_user_session_path, method: :delete %>
+<%= button_to "Volver", user_session_path %><!- codigo para regresar a la pantalla inicial ->
+<%= button_to "Salir", destroy_user_session_path, method: :delete %><!- codigo para salir de la sesión ->

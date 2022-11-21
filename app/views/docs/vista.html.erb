@@ -1,8 +1,11 @@
-<h1> Documentos hasta la fecha </h1>
-
+<!-El codigo generado en este apartado sirve para visualizar informacion en la base de datos
+Se usa la tabla InformacionDocumento de la  base de datos definida aca como @info y con esto se genera una lista
+con los datos.
+->
+<h1> Documentos hasta la fecha </h1> <!- esto aparece escrito en tamaño H1 ->
 <ul>
-    <% @info.each do |info| %>                        
-                <li>
+    <% @info.each do |info| %><!- ingresa a los datos de la tabla InformacionDocumento agregadas en la variable @info y le asigna cada uno de estos a la variable info ->                   
+                <li><!- genera la lista y muestra los datos de la variable info ->
                 NUMERO DE DOCUMENTO:
                 <%= info.numero_documento %> <br><br>
                 Fecha de Emision: 
@@ -33,5 +36,5 @@
     <% end %>
 </ul>
 
-<%= button_to "Volver", user_session_path %>
-<%= button_to "Salir", destroy_user_session_path, method: :delete %>
+<%= button_to "Volver", user_session_path %><!- codigo para regresar a la pantalla inicial ->
+<%= button_to "Salir", destroy_user_session_path, method: :delete %><!- codigo para salir de la sesión ->

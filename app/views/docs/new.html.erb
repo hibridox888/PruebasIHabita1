@@ -1,5 +1,9 @@
-<h2>Ingrese datos para ingresar documento nuevo:</h2>
-<%= form_with model: @doc do |f| %>
+<!-El codigo generado en este apartado sirve para registrar informacion en la base de datos
+Se usa la tabla Doc de la base de datos definida aca como @doc y con esto se genera un fomulario.
+->
+
+<h2>Ingrese datos para ingresar documento nuevo:</h2><!- esto aparece escrito en tamaño H2 ->
+<%= form_with model: @doc do |f| %> <!- esto genera un formulario y guarda cada apartado en la variable f para entregarsela mas tarde a la tabla->
     <div class="field">
         <%= f.label :empresa %><br />
         <%= f.text_field :empresa, autofocus: true, autocomplete: "Suracon" %>
@@ -21,5 +25,5 @@
     </div>
 <% end %>
 
-<%= button_to "Volver", user_session_path %>
-<%= button_to "Salir", destroy_user_session_path, method: :delete %>
+<%= button_to "Volver", user_session_path %><!- codigo para regresar a la pantalla inicial ->
+<%= button_to "Salir", destroy_user_session_path, method: :delete %><!- codigo para salir de la sesión ->
