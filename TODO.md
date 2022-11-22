@@ -2,11 +2,11 @@
 
 Este documento contiene todas las ideas que se deben realizar para quedar plasmadas dentro del programa final, tambien contiene todo lo relacionado con la documentacion por realizar.
 
-1) empezar a redactar la documentacion dentro de cada codigo para su futuro uso, utilizando idioma ingles.
+1) corregir idioma de la documentación.
 
-2) Corregir Nombres acordes a la necesidad, no dejarlos con nombres al azar, tambien para que se entienda todo el codigo para el uso futuro.
+2) Corregir Nombres acordes a la necesidad, no dejarlos con nombres al azar, tambien para que se entienda todo el codigo para el uso futuro. (hacerlo en nuevo proyecto)
 
-3) Crear la opcion de ingresar con distintos tipos de usuarios, usuario normal ( es capaz de entrar al sistema para visualizar documentos y editar el estado de estos, además puede modificar documentos con estado "editable),y editar su perfil. Superusuario (es capaz de ingresar al sistema para editar los usuarios que existen, menos a los superusuarios, puede tambien realizar lo que puede un usuario normal).
+3) Crear la opcion de ingresar con distintos tipos de usuarios, usuario normal ( es capaz de entrar al sistema para visualizar documentos y editar el estado de estos, además puede modificar documentos con estado "editable),y editar su perfil. Superusuario (es capaz de ingresar al sistema para editar los usuarios que existen, menos a los superusuarios, puede tambien realizar lo que puede un usuario normal). (primera version = fail)
 
 4) Modificar codigo para incorporar botones de sesion en donde se vea mejor.
 
